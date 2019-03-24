@@ -18,8 +18,11 @@ export class BookCitation extends Component {
             .then(data => this.setState({sources: data.items}))
     }
 
+    preventDefault = e => {
+        e.preventDefault()
+    }
+
     inputChanged = i => {
-        i.preventDefault()
         this.setState({
             text: i.target.value
         })
@@ -30,10 +33,13 @@ export class BookCitation extends Component {
             <div class="container">
                 <h2>Book Citation</h2>
 
-                <span class="multi-input" width="100%">
+                <form class="multi-input" width="100%" onSubmit={this.preventDefault}>
                     <input class="input" type="text" onInput={this.inputChanged} value={text} />
-                    <button class="button input" onClick={this.findBook}>Search</button>
-                </span>
+                    <button
+                        type="submit"
+                        class="button input"
+                        onClick={this.findBook}>Search</button>
+                </form>
 
                 <div>
                     { sources.map(({volumeInfo}) =>
