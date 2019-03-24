@@ -1,0 +1,9 @@
+.book-preview {
+    width: auto!important;
+    padding: 2em;
+    display: grid;
+    place-items: center center;
+}
+.full-width {
+    width: 100%!important;
+}

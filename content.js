@@ -31,6 +31,7 @@ export class BookCitation extends Component {
     render({}, { text, sources }) {
         return (
             <div class="container">
+                <br />
                 <h2>Book Citation</h2>
 
                 <form class="multi-input" width="100%" onSubmit={this.preventDefault}>
@@ -47,7 +48,9 @@ export class BookCitation extends Component {
                             title={volumeInfo.title}
                             author={volumeInfo.authors}
                             publisher={volumeInfo.publisher}
-                            pubdate={volumeInfo.publishedDate} />)
+                            pubdate={volumeInfo.publishedDate}
+                            thumb={volumeInfo.imageLinks.thumbnail}
+                            preview={volumeInfo.previewLink} />)
                     }
                 </div>
             </div>
