@@ -1,4 +1,5 @@
 import { Component } from 'preact'
+import { PubDate } from './date'
 
 export class Source extends Component {
     render({
@@ -9,8 +10,11 @@ export class Source extends Component {
     }) {
         return (
             <div>
-                {title} &nbsp;
-                <i>{author}</i>
+                {author[0].split(' ').reverse().join(', ')}.
+                &nbsp;
+                <i>{title}</i>.
+                &nbsp;
+                <PubDate date={pubdate} />. {publisher}
             </div>
         )
     }
